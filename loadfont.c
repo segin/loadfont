@@ -15,6 +15,7 @@ int main(int argc, char *argv[], char *envp[])
 	LPWSTR *arglist;
 	int nargs;
 	int i;
+	int total;
 
 	arglist = CommandLineToArgvW(GetCommandLineW(), &nargs);
 	if(arglist == NULL) { 
@@ -22,9 +23,11 @@ int main(int argc, char *argv[], char *envp[])
 		return(1);
 	} else { 
 		for(i = 0; i < nargs; i++) { 
-			printf("%d: %ws\n", i, arglist[i]);
+			// Why not use i? .otf files can contain multiple fonts per file.
+			total += AddFontResourceW(arglist[i]);
 		};
 	}
+	wprintf(L"Loaded %d fonts.\n", total);
 	LocalFree(arglist);
 	return(0);
 }
