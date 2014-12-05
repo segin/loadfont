@@ -1,7 +1,7 @@
 /* loadfont - Utility to temporarily load a font on Windows.
  * Copyright (C) 2014 Kirn Gill <segin2005@gmail.com>
  * 
- * vim: ts=4 sw=4 ai
+ * vim: ts=4 sw=4 ai syntax=on
  * 
  * See LICENSE for copyright licencing details. 
  */ 
