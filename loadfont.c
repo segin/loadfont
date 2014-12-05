@@ -8,7 +8,6 @@
 
 #include <windows.h>
 #include <stdio.h>
-#include <shellapi.h>
 
 int main(int argc, char *argv[], char *envp[])
 {
