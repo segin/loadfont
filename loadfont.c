@@ -1,7 +1,7 @@
 /* loadfont - Utility to temporarily load a font on Windows.
  * Copyright (C) 2014 Kirn Gill <segin2005@gmail.com>
  * 
- * vim: ts=4 sw=4 ai syntax=on
+ * vim: ts=4 sw=4 ai syntax=c
  * 
  * See LICENSE for copyright licencing details. 
  */ 
@@ -20,8 +20,9 @@ int main(int argc, char *argv[], char *envp[])
 	if(arglist == NULL) { 
 		wprintf(L"CommandLineToArgvW failed.\n");
 		return(1);
-	} else { 
-		for(i = 0; i < nargs; i++) { 
+	} else {
+		total = 0;
+		for(i = 1; i < nargs; i++) { 
 			// Why not use i? .otf files can contain multiple fonts per file.
 			total += AddFontResourceW(arglist[i]);
 		};
